@@ -27,24 +27,47 @@ then
 	exit
 fi
 
+BLUE "Updating repositories..."
 sudo apt update
 
-sudo apt full-upgrade
+BLUE "Installing updates..."
+sudo apt install
 
-sudo apt install git
+BLUE "Installing pip..."
+sudo apt-get install -y python-pip
 
-mkdir tools
+BLUE "Installing unzip..."
+sudo apt install unzip
 
-cd tools
-
-git clone https://github.com/davidbombal/ssh_bruteforcing.git
-
-git clone https://github.com/JohnHammond/pyminify.git
-
-git clone https://github.com/davidbombal/python-keylogger.git
-
+BLUE "Installing paramiko"
 pip install paramiko
 
+BLUE "Installing HTOP..."
+sudo apt install htop
+
+BLUE "Installing tree..."
+sudo apt install tree
+
+BLUE "Installing git..."
+sudo apt install git
+
+BLUE "Making directory tools..."
+mkdir tools
+
+BLUE "Moving to directory tools..."
+cd tools
+
+BLUE "Cloning ssh_bruteforcing.git..."
+git clone https://github.com/davidbombal/ssh_bruteforcing.git
+
+BLUE "Cloning pyminify.git..."
+git clone https://github.com/JohnHammond/pyminify.git
+
+BLUE "Cloning python-keylogger.git..."
+git clone https://github.com/davidbombal/python-keylogger.git
+
+BLUE "Updating repositories..."
 sudo apt update
 
+BLUE "Installing updates"
 sudo apt full-upgrade
